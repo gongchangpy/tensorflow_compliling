@@ -12,16 +12,24 @@ grep flags -m1 /proc/cpuinfo | cut -d ":" -f 2 | tr '[:upper:]' '[:lower:]' | { 
 1.下载最新版tensorfow
 git clone https://github.com/tensorflow/tensorflow
 
-2.安装bazel 
-到bazel下载网址下载自己合适版本bazel：https://github.com/bazelbuild/bazel/releases
-这里下载的是0.23：
-wget https://github.com/bazelbuild/bazel/releases/download/0.23.2/bazel-0.23.2-installer-linux-x86_64.sh
-下载之后安装，sh bazel*.sh
+2.安装bazel   
 
-3.安装编译依赖
-yum install  python-pip python-devel gcc zlib*
-yum -y install java-1.8.0-openjdk-devel automake autoconf libtool libicu gcc-c++
-pip install numpy grpcio Keras-Applications Keras-Preprocessing h5py requests
+到bazel下载网址下载自己合适版本bazel：https://github.com/bazelbuild/bazel/releases . 
+
+这里下载的是0.23：  
+
+wget https://github.com/bazelbuild/bazel/releases/download/0.23.2/bazel-0.23.2-installer-linux-x86_64.sh . 
+
+下载之后安装，sh bazel*.sh . 
+
+3.安装编译依赖 . 
+
+yum install  python-pip python-devel gcc zlib* . 
+
+yum -y install java-1.8.0-openjdk-devel automake autoconf libtool libicu gcc-c++ . 
+
+pip install numpy grpcio Keras-Applications Keras-Preprocessing h5py requests . 
+
 
 4.配置tensorflow并编译安装
   进入下载好的tensorflow源码：
