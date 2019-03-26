@@ -32,15 +32,24 @@ pip install numpy grpcio Keras-Applications Keras-Preprocessing h5py requests .
 
 
 4.配置tensorflow并编译安装
+
   进入下载好的tensorflow源码：
+  
   cd tensorflow
+  
   执行配置命令，该命令可以指定python环境依赖是2.7.5或者3.6.8，并指定是否支持google或者hadoop等，指定越多编译耗时越长，我这里全部选的N
+  
   ./configure
+  
   执行bazel构建仅支持 CPU 的 TensorFlow 软件包构建器（构建过程出现一些下划线斜杠上箭头之类的现象忽略，静等最后编译结果）
+  
   nohup bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package & 
   
+  
   注：构建时间较长建议后台运行，可以指定参数支持avx指令集和支持gpu的构建器！（以下命令要先确认cpu支持avx，下面构建方式机器不支持没有构建）
+  
   参考命令：
+  
   bazel build -c opt –copt=-mavx –copt=-mavx2 –copt=-mfma –copt=-mfpmath=both –copt=-msse4.2 –config=cuda -k       //tensorflow/tools/pip_package:build_pip_package  
 
 5.构建软件包  
