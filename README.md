@@ -1,5 +1,5 @@
 # tensorflow_compliling
-tensorflow 源码编译，适用于python环境2.7.5和3.6.8
+tensorflow 仅支持cpu源码编译，适用于python环境2.7.5和3.6.8
 
 cpu不支持avx指令集，若cpu支持avx指令集集合可编译支持avx版本tensorfow
 查看cpu是否支持avx指令集命令：
@@ -74,4 +74,12 @@ rm -rf libstdc++.so.6 libstdc++.so.6.0.19
 ln -s libstdc++.so.6.0.22 libstdc++.so.6
 
 7）验证tensorflow是否可以正常导入
+
+
+参考网址：
+https://blog.csdn.net/fengbin2005/article/details/88321495
+https://www.tensorflow.org/install/source
+https://www.cnblogs.com/lzpong/p/5755678.html
+
+
 
