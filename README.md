@@ -3,7 +3,8 @@ tensorflow 仅支持cpu源码编译，适用于python环境2.7.5和3.6.8
 
 cpu不支持avx指令集，若cpu支持avx指令集集合可编译支持avx版本tensorfow
 
-查看cpu是否支持avx指令集命令：
+查看cpu是否支持avx指令集命令：  
+
 grep flags -m1 /proc/cpuinfo | cut -d ":" -f 2 | tr '[:upper:]' '[:lower:]' | { read FLAGS; OPT="-march=native"; for flag in $FLAGS; do case "$flag" in "sse4_1" | "sse4_2" | "ssse3" | "fma" | "cx16" | "popcnt" | "avx" | "avx2") OPT+=" -m$flag";; esac; done; MODOPT=${OPT//_/\.}; echo "$MODOPT"; }
 
 本次编译tensorflow源码版本为1.3.1
